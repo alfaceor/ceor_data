@@ -1,0 +1,144 @@
+
+Hi Emmanuelle,
+
+Many thanks for the comments, I'll add the suggested changes.
+
+But just a few comments:
+
+About the structural model,
+> - did we really test combinations of logistic growth and net rates ? I thought
+we changed all of them in one go ?
+
+yes we initiallly jump directly the net rate model from the logistic one, but was an initial test, after that I did run all the combinations of logistic and net rate as shown in attachment, to evaluate if we have a saturation in bladder for instance and not in the other compartments, and that is why I want to describe the equations for the two models acting in one generic compartment $X$.
+
+Now about the logistic model:
+> now that I look at it I'm not sure we shouldn't have written the logistic growth as
+alpha(1-C/Css)C - ke.C
+or
+alpha(1-C/(C+Css))C - ke.C
+I think is correct expression, because the Css term give us the saturation value for each compartment, and we recover the model of deltas considering an infinite value for Css, meaning no maximum saturation. I do cite a paper were this model is use is the reference [1].
+
+>from the equations on p.4
+(number the equations please) I don't see an elimination from the system, so
+that doesn't really make sense. The other problem is that the second set of
+equations doesn't come from the first (the alphas were assumed to be positive,
+but not the deltas which you get if Css goes to infinity)
+
+Well in fact there is no linear elimination, because the C/Css is a non-linear elimination, but I think I understand your point in which I didn't describe the reason of the model, and is because at the end for inferences purposes this parameters will be indistinguishable.
+
+So we maybe we could add the elimination ke (immune system), but we will no be able to infer this parameter but maybe is worth it to explain this in a supplementary information, otherwise will be to many equations in the main body.
+
+
+> I'm unclear
+about whether we can use Monolix with no IIV at all actually, in the very first
+stage, in my mind we still had some IIV on ku
+
+In the multiple tests we made at some point we did it considering one variability, but we did change it to the case without initial variability to be more systematic.
+
+Appart from that I agree with all the other comments I'll implement them in the next version and send it back to you.
+
+Thanks again,
+
+Carlos
+
+=============================================================
+
+     Dear Carlos,
+
+        Thanks, a few comments on the Methods to restructure them a bit and add missing
+elements.
+
+        Looking forward to v2 + Results :-)
+                        Emmanuelle     
+
+Data
+- we need to add some more details about the experiment, using sections
+Pyelonephritis mouse model and In vivo antimicrobial treatment of Amoura et al.
+2024 to explain the mouse model and how CFU counts were obtained, and then we
+can refer to that paper for additional experimental details (so we summarise
+briefly the protocol but we don't explain all the details).
+- the second paragraph is out of order, start with the sampling protocol, how
+organs were recovered and weighted, and urine collection. Then how CFU were
+obtained from these samples. "For urine..." (urine volume) you can keep it here
+but you have to explain how that relates to CFU counts (it's not clear what the
+units are).
+the last sentence of this paragraph isn't grammatically sound so hard to understand.
+- the analysis technically is on longitudinal data, even though there is no
+longitudinal data for individual mice
+
+Statistical  model
+- notations:
+* we want to index the organ by its initial, not a number => we have CFU_k,
+CFU_b, CFU_u
+and therefore we can't have k for the organ (try q)
+* we still have time so I'd avoid jth response, let's go for
+y_i = CFU count in mouse i at time t_i, and y_i=y_{ki}, y_{bi}, y{ui}
+* number equations and let them stand on their own line so we can see them clearly
+* don't use xi_i,k but just t_i (by definition they get all organs at the time
+of the demise of the mouse)
+- the presentation of the models is a bit hard to follow
+* for the structural model I'd just go with something like
+simultaneous modelling of all 3 responses through NLMEM (stat model)
+using a system of ODE for the 3 components of f=(f_k, f_b, f_u)
+stat models for individual parameters and residual errors
+* "Each individual parameter θi can be decomposed as a fixed effect μ, which
+represents the mean value of the parameter in..."
+this section is slightly convoluted, maybe start with the equation theta_i = mu
+exp(b) (which should be b_i) ?
+* use the f+g.epsilon notation, so that epsilon~N(0,1) and g=combined error
+model for the equation, letting us test additive and proportional.
+- legend of Figure 1 says "Figure 1: Model diagram for PAS strain without
+antibiotic treatment" but the right hand side is with antibiotic, and I thought
+we said that antibiotic would be an add-on bonus but not the main analysis
+
+Modeling strategy
+- same goes: I think there is currently too much emphasis on antibiotic when we
+said we didn't think it was particularly well supported by the data. I think I
+would focus really on the analysis without Ab first and dub the second one
+exploratory.
+- modelling strategy and models are entwined atm. I think I'd separate them into
+a model section (what models do we use (full and simplified), the ODEs and the
+interpretation) and then the strategy itself (PAS alone, selection criteria,
+order of testing, strain analysis, IIV, ...), finishing by an exploratory Ab
+analysis.
+- things like " evaluated exchange rates " is too imprecise: it could be "we
+tested whether some exchange rates q could be removed from the model using...as
+a criterion" (...= BICc, or RSE>100%, or something precise)
+- did we really test combinations of logistic growth and net rates ? I thought
+we changed all of them in one go ?
+- 'functional dependency' replace with "a function of the Ab"
+- "Given the absence of measured drug concentrations, we assumed that the
+antibiotic primarily influences the effective growth rates of the bacteria."
+I don't understand what yuo mean by that (that's our postulate, that Ab affects
+growth rates, but it still means they act through the concentration)
+- Figure 2: can you write K(t), U(t), B(t) so it's clearer what is a parameter
+and what is a response ?
+now that I look at it I'm not sure we shouldn't have written the logistic growth as
+alpha(1-C/Css)C - ke.C
+or
+alpha(1-C/(C+Css))C - ke.C
+to show ke and alpha (ke has disappeared from the model)
+in any case we need some kind of reference for the models we used, our thinking
+being bacteria proliferation but at the same time control from the immune system
+and urinary excretion to eliminate the bacteria, and from the equations on p.4
+(number the equations please) I don't see an elimination from the system, so
+that doesn't really make sense. The other problem is that the second set of
+equations doesn't come from the first (the alphas were assumed to be positive,
+but not the deltas which you get if Css goes to infinity)
+
+Model selection and evaluation
+- Model selection is part of the strategy, so either the section before should
+not be called strategy or there is a problem with the structure. See above for
+suggestion (models, model building, evaluation, simulation)
+Estimation should be just after the NLMEM model (taht we use the SAEM algorithm,
+computing the LL by IS to calculate BICc).
+- define LOQ in the data section (explain how it's obtained and what it
+corresponds to)
+- move the tools (Monolix and Simulx in the next section) to a specific (short)
+paragraph called Implementation. You can add some settings here (I'm unclear
+about whether we can use Monolix with no IIV at all actually, in the very first
+stage, in my mind we still had some IIV on ku
+
+=======================================================
+
+

@@ -1,0 +1,35 @@
+\TODO{Table Supp.}
+\begin{table}[h!]
+	\centering
+	% Adjust the table size if needed
+	\begin{adjustbox}{max width=\textwidth}
+%		\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+		\begin{tabular}{|p{3.5cm}|c|c|c|c|c|c|c|c|c|c|}
+			\hline
+			\makecell[c]{Antibiotic Group} & \makecell[c]{Strain} & \multicolumn{8}{c|}{Days} & \makecell[c]{Total} \\ \cline{3-10} 
+			&                      & 1 & 2 & 4 & 6 & 10 & 14 & 16 & 22 & \\ \hline
+			\multirow{4}{*}{Control} & PAS & 13 & 17 & 18 & 5 & 3 &  & 9 & 11 & 76 \\ \cline{2-11}
+			& NILS69 &  & 15 & 12 &  &  &  &  &  & 27 \\ \cline{2-11}
+			& UTI &  & 12 & 11 &  & 3 &  & 5 &  & 31 \\ \cline{2-11}
+			& CFT &  & 11 & 13 &  & 8 &  & 8 &  & 40 \\ \hline
+			\multirow{3}{*}{\makecell[c]{Ciprofloxacin 2.5 mg/kg }} % \\ 9 a.m and 5 p.m. \\for 48 hours.
+			& PAS &  &  & 17 &  & 5 &  &  &  & 22 \\ \cline{2-11}
+			& UTI &  &  & 7 &  &  &  &  &  & 7 \\ \cline{2-11}
+			& CFT &  &  & 11 &  &  &  &  &  & 11 \\ \hline
+			\multirow{4}{*}{\makecell[c]{Ciprofloxacin 10 mg/kg }} % 9 a.m and 5 p.m. \\for 48 hours.
+			& PAS &  &  & 7 &  &  &  &  &  & 7 \\ \cline{2-11}
+			& NILS69 &  &  & 7 &  &  &  &  &  & 7 \\ \cline{2-11}
+			& UTI &  &  & 7 &  &  &  &  &  & 7 \\ \cline{2-11}
+			& CFT &  &  & 6 &  &  &  &  &  & 6 \\ \hline
+			\multirow{1}{*}{\makecell[c]{Cefotaxime 100 mg/kg}}  % \\ every 6 hours \\for 24 hours.
+			& PAS &  &  & 14 &  & 6 &  &  &  & 20 \\ \hline
+			\multirow{1}{*}{\makecell[c]{Fosfomycin 100 mg/kg }} % \\ every 4 hours \\for 24 hours.
+			& PAS &  &  & 8 &  &  &  &  &  & 8 \\ \hline
+			\multirow{1}{*}{\makecell[c]{Delafloxacin 10 mg/kg }} % \\ 9 a.m and 5 p.m. \\for 48 hours.
+			& PAS &  &  & 7 &  &  &  &  &  & 7 \\ \hline
+			& & 13 & 55 & 145 & 5 & 14 & 11 & 22 & 11 & 276 \\ \hline
+		\end{tabular}
+	\end{adjustbox}
+	\caption{Mice sampling distribution with antibiotic treatments on bacterial strains in time.}
+	\label{tab:mice_sampling}
+\end{table}

@@ -1,0 +1,38 @@
+\begin{thebibliography}{1}
+
+\bibitem{allen2018bacterial}
+Rosalind~J Allen and Bartlomiej Waclaw.
+\newblock Bacterial growth: a statistical physicist’s guide.
+\newblock {\em Reports on Progress in Physics}, 82(1):016601, 2018.
+
+\bibitem{amoura2024variability}
+Ariane Amoura, Claire Pistien, Camille Chalign{\'e}, Sara Dion, M{\'e}lanie Magnan, Antoine Bridier-Nahmias, Alexandra Baron, Fran{\c{c}}oise Chau, Emmanuel Bourgogne, Minh Le, et~al.
+\newblock Variability in cell division among anatomical sites shapes escherichia coli antibiotic survival in a urinary tract infection mouse model.
+\newblock {\em Cell Host \& Microbe}, 2024.
+
+\bibitem{jakobsen2020ciprofloxacin}
+Lotte Jakobsen, Carina~Vingsbro Lundberg, and Niels Frimodt-M{\o}ller.
+\newblock Ciprofloxacin pharmacokinetics/pharmacodynamics against susceptible and low-level resistant escherichia coli isolates in an experimental ascending urinary tract infection model in mice.
+\newblock {\em Antimicrobial Agents and Chemotherapy}, 65(1):10--1128, 2020.
+
+\bibitem{kuhn2005maximum}
+Estelle Kuhn and Marc Lavielle.
+\newblock Maximum likelihood estimation in nonlinear mixed effects models.
+\newblock {\em Computational statistics \& data analysis}, 49(4):1020--1038, 2005.
+
+\bibitem{labat2005mutator}
+Francoise Labat, Olivier Pradillon, Louis Garry, Michel Peuchmaur, Bruno Fantin, and Erick Denamur.
+\newblock Mutator phenotype confers advantage in escherichia coli chronic urinary tract infection pathogenesis.
+\newblock {\em FEMS Immunology \& Medical Microbiology}, 44(3):317--321, 2005.
+
+\bibitem{rosen2007detection}
+David~A Rosen, Thomas~M Hooton, Walter~E Stamm, Peter~A Humphrey, and Scott~J Hultgren.
+\newblock Detection of intracellular bacterial communities in human urinary tract infection.
+\newblock {\em PLoS medicine}, 4(12):e329, 2007.
+
+\bibitem{samson2006extension}
+Adeline Samson, Marc Lavielle, and France Mentr{\'e}.
+\newblock Extension of the saem algorithm to left-censored data in nonlinear mixed-effects model: Application to hiv dynamics model.
+\newblock {\em Computational Statistics \& Data Analysis}, 51(3):1562--1574, 2006.
+
+\end{thebibliography}
