@@ -3,9 +3,9 @@
 
 %\usepackage{arxiv}
 
-\usepackage[backend=biber, style=numeric]{biblatex} % Use Biber and APA style
+% \usepackage[backend=biber, style=numeric]{biblatex} % Use Biber and APA style
 
-\addbibresource{references.bib} % Load your .bib file
+% \addbibresource{references.bib} % Load your .bib file
 
 \usepackage[utf8]{inputenc} % allow utf-8 input
 \usepackage[T1]{fontenc}    % use 8-bit T1 fonts
@@ -37,8 +37,8 @@
 \usepackage{adjustbox} % For table adjustments
 
 % Import bibliography
-%\bibliography{anoruti_refs.bib}
-%\addbibresource{anoruti_refs.bib}
+% \bibliography{anoruti_refs.bib}
+% \addbibresource{anoruti_refs.bib}
 
 
 %opening
@@ -59,8 +59,8 @@
 \maketitle
 
 \begin{abstract}
-	
-\TODO{Change Abstract}
+
+	\TODO{Change Abstract}
 %Ariane's paper summary:
 
 %Urinary tract infection (UTI), mainly caused by Escherichia coli, are frequent and have a recurrent nature even
@@ -72,11 +72,14 @@
 
 \section{Introduction}
 
+% Ariane's paper
+
+% This scientific article from Cell Host \& Microbe investigates the variability of E. coli cell division across different sites within a mouse model of urinary tract infection (UTI) and its impact on antibiotic survival. The authors used a clever synthetic biology tool to track which bacteria were actively dividing during infection and after antibiotic treatment in the urine, bladder, and kidneys. Their findings reveal that bacterial replication status differs significantly by location, with more active division in the kidneys and urine compared to the bladder, and that non-dividing bacteria are enriched after antibiotic exposure in all sites. Ultimately, the research highlights the importance of understanding these location-specific growth dynamics and antibiotic persistence for developing better treatments against recurrent UTIs.
 
 
 \begin{itemize}
 	\item Importance, motivation Why?
-	\item What is know about it?
+	\item What is known about it?
 	\item What is the purpose of this work?
 	\item Migration dynamics depends on the bacteria strain.
 	\item Urinary tract infections (UTI) are the second most common infection worldwide with high recurrence rates, with E. coli the most prevalent cause of infection \cite{rosen2007detection}.
@@ -105,7 +108,11 @@
 %draw_Anoruti_flowchart_PAS
 
 
-A total of 203 healthy 8-week-old female CBA/J mice,  in an ascending pyelonephritis UTI mouse model \cite{labat2005mutator}, were bacteria infection were administered into the bladder through a urethral catheter after general anesthesia on day 0 with approximately $10^8$ colony-forming units (CFU) of PAS, NILS69, UTI, or CFT bacterial strains without any antibiotic treatment. Of these, 29 mice received ciprofloxacin at doses of either 2.5 mg/kg or 10 mg/kg over a 48-hour period.
+% A total of 203 healthy 8-week-old female CBA/J mice,  in an ascending pyelonephritis UTI mouse model \cite{labat2005mutator}, were bacteria infection were administered into the bladder through an urethral catheter after general anesthesia on day 0 with approximately $10^8$ colony-forming units (CFU) of PAS, NILS69, UTI, or CFT bacterial strains without any antibiotic treatment. Of these, 29 mice received ciprofloxacin at doses of either 2.5 mg/kg or 10 mg/kg over a 48-hour period.
+
+
+A total of 203 healthy, 8-week-old female CBA/J mice were used in an ascending pyelonephritis urinary tract infection (UTI) model as previously described \cite{labat2005mutator}. On day 0, following general anesthesia, mice were transurethrally inoculated with approximately $10^8$ colony-forming units (CFU) of PAS133, NILS69+TM, UTI89+TM, or CFT073+TM Escherichia coli strains via urethral catheterization, without antibiotic treatment. Of these, 29 mice were subsequently treated with ciprofloxacin at either 2.5 mg/kg or 10 mg/kg over a 48-hour period.
+
 
 The bacterial density (CFU/g or CFU/ml) in each organ was determined, after sacrifice by culturing the bacteria overnight in Luria-Bertani (LB) broth. Additional details can be found in \cite{amoura2024variability}.
 CFU counts in each organ were calculated by scaling the CFU/g values obtained from the kidney and bladder based on the measurement of organ's weight after sacrifice. For urine we assumed a standard volume of 1 ml as a scaling factor. Mice without antibiotic treatment were sacrificed on days 1, 2, 4, 6, 10, 16, and 22, while those receiving antibiotic treatment were sacrificed on day 4 only. For more detailed information table, please refer  to Table \ref{tab:mice_sampling} in the supplementary materials.
@@ -532,9 +539,9 @@ Tab. \ref{tab:mice_sampling}
 
 \section{Bibliography}
 % \printbibliography %[heading=none,title=none]
-\printbibliography % Print bibliography
-% \bibliographystyle{plain} % We choose the "plain" reference style
-% \bibliography{anoruti_refs} % Entries are in the refs.bib file
+% \printbibliography % Print bibliography
+\bibliographystyle{plain} % We choose the "plain" reference style
+\bibliography{anoruti_refs} % Entries are in the refs.bib file
 
 \appendix
 \section{Data}
@@ -562,7 +569,7 @@ Tab. \ref{tab:mice_sampling}
 	\centering
 	\includegraphics[width=\linewidth]{images/plt_vpc_merged_Ct_ONLY.pdf}
 	\caption{Visual Predicte Check for model with antibiotic, for each compartment.}
-	\label{fig:ModelIndFits}
+	% \label{fig:ModelIndFits}
 \end{figure}
 
 
@@ -571,7 +578,7 @@ Tab. \ref{tab:mice_sampling}
 \begin{figure}
 	\centering
 	\includegraphics[width=\linewidth]{images/plt_final_model_Ct_PAS_vertical.pdf}
-	\caption{Time evolution of CFU for each organ compartment, open circles experimental data, individual fits gray line, purple curve population parameters, black solid line medianvalue at each sampling day}
+	\caption{Time evolution of CFU for each organ compartment, open circles experimental data, individual fits gray line, purple curve population parameters, black solid line median value at each sampling day}
 	\label{fig:ModelIndFits}
 \end{figure}
 
@@ -593,7 +600,7 @@ Tab. \ref{tab:mice_sampling}
 	\centering
 	\includegraphics[width=\linewidth]{images/plt_final_model_Ct_ALL_VPC.pdf}
 	\caption{Visual Predicte Check for different strains and compartments.}
-	\label{fig:ModelIndFits}
+	% \label{fig:ModelIndFits}
 \end{figure}
 
 
