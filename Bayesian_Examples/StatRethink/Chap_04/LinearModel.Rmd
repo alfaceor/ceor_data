@@ -1,0 +1,41 @@
+---
+title: "Untitled"
+author: "Carlos Olivares"
+date: "May 5, 2025"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+
+```{r}
+library(rethinking)
+```
+
+```{r}
+data(Howell1)
+d <- Howell1
+d2 <- d[d$age >= 18, ]
+d2
+```
+
+```{r}
+
+
+```
+
+
+
+
+# Linear Models
+
+```{r}
+
+```
+
+
