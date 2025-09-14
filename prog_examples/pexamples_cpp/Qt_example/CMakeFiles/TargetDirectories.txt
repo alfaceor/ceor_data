@@ -1,0 +1,3 @@
+/home/alfaceor/GitHub/alfaceor/ceor_data/prog_examples/pexamples_cpp/CMakeFiles/calculator_app.dir
+/home/alfaceor/GitHub/alfaceor/ceor_data/prog_examples/pexamples_cpp/CMakeFiles/edit_cache.dir
+/home/alfaceor/GitHub/alfaceor/ceor_data/prog_examples/pexamples_cpp/CMakeFiles/rebuild_cache.dir
